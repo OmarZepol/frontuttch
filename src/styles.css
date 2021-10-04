@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #030615 !important;
+}
+
+.alineado {
+    right: 0;
+    text-align: right;
+    margin: auto;
+    margin-left: 74%;
+}
+
+.letra {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav {
+    background: #030615 !important;
+}
