@@ -10,6 +10,8 @@ import { CursosComponent } from './pages/cursos/cursos.component';
 import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
 import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
 import { VentamodulosComponent } from './pages/ventamodulos/ventamodulos.component';
+import { LoginComponent } from './pages/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { VentamodulosComponent } from './pages/ventamodulos/ventamodulos.compone
     CursosComponent,
     MantenimientoComponent,
     DesarrolloComponent,
-    VentamodulosComponent
+    VentamodulosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

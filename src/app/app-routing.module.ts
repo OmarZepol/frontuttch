@@ -4,6 +4,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { LoginComponent } from './pages/login/login.component';
 import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
 import { VentamodulosComponent } from './pages/ventamodulos/ventamodulos.component';
 
@@ -12,10 +13,11 @@ const routes: Routes = [
   {path: 'cursos', component: CursosComponent},
   {path: 'desarrollo', component: DesarrolloComponent},
   {path: 'inicio', component: InicioComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'mantenimiento', component: MantenimientoComponent},
   {path: 'venta-modulos', component: VentamodulosComponent},
-  { path: '',   redirectTo: 'inicio', pathMatch: 'full' },
-  { path: '**', component: InicioComponent },
+  { path: '',   redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', component: LoginComponent },
 ];
 
 @NgModule({
