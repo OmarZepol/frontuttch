@@ -29,11 +29,12 @@ export class LoginComponent implements OnInit {
      this.autSvc.login(this.log.value).subscribe(
        (data:any)=>{
        if(!data.token){
-         console.log(data);
-         this.toastrSvc.error(`Correo o contraseña incorrecta`, 'UTVCO TECHNOLOGY');         
+         //console.log(data);
+         this.toastrSvc.error(`${data.text}`, 'UTVCO TECHNOLOGY');         
        }else{
          this.router.navigate(['/inicio']);
-         this.toastrSvc.success(`Bienvenido`, 'UTVCO TECHNOLOGY');
+         //console.log(data.data.nombre);
+         this.toastrSvc.success(`Bienvenido ${data.data.nombre}`, 'UTVCO TECHNOLOGY');
        }
      });
    }
