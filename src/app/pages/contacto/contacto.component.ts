@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Solicitud } from '../../models/solicitud';
+import { SolicitudService } from 'src/app/services/solicitud.service';
 
 @Component({
   selector: 'app-contacto',
@@ -7,35 +9,41 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
+  agregar: Solicitud = {
+    nombre: '',
+    email: '',
+    telefono: '',
+    asunto: '',
+    descripcion: '',
+  };
 
-  formulario: FormGroup;
+  solicitud;
 
-  constructor(private formB: FormBuilder) {
-    this.createForm();
-   }
+  constructor(private formB: FormBuilder, private regSer: SolicitudService) {
+    this.solicitud = formB.group({
+      nombre: ['', Validators.required],
+      email: ['',[Validators.required, Validators.email]],
+      telefono: ['',[Validators.required, Validators.minLength(10),Validators.maxLength(10)]],
+      asunto: ['', Validators.required],
+      descripcion: ['', Validators.required]
+    })
+   };
 
   ngOnInit(): void {
   }
 
-  createForm(){
-    this.formulario = this.formB.group(
-      {
-        nombre: ['', Validators.required],
-        email: ['',[Validators.required, Validators.email]],
-        telefono: ['',[Validators.required, Validators.minLength(10),Validators.maxLength(10)]],
-        asunto: ['', Validators.required],
-        descripcion: ['', Validators.required]
-      }
-    );
+  Agregar(){
+    this.solicitud.reset({
+      nombre: this.solicitud.value.nombre,
+      email: this.solicitud.value.email,
+      telefono: this.solicitud.value.telefono,
+      asunto: this.solicitud.value.asunto,
+      descripcion: this.solicitud.value.descripcion,
+    })
+
+    const {nombre, email, telefono, asunto, descripcion} = this.solicitud.value;
+    this.regSer.registrarSolicutud(nombre,email,telefono,asunto,descripcion).subscribe(res=>console.log(res));
   }
 
-  save(){
-    if(this.formulario.valid){
-      console.log(this.formulario.value);
-    }
-    else{
-      console.log('Tu formulario esta mal');
-    }
-  }
 
-}
+};
