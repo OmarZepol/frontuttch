@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Solicitud, AuthResponse } from '../models/solicitud';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +18,6 @@ export class SolicitudService {
     const url = `${this.urlB}/solicitud/create`;
     const body = {nombre,email,telefono,asunto, descripcion};
     return this.http.post<AuthResponse>(url,body);
+    
   }
 }
