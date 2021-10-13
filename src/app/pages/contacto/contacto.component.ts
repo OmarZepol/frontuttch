@@ -34,17 +34,12 @@ export class ContactoComponent implements OnInit {
   }
 
   Agregar(){
-    this.solicitud.reset({
-      nombre: this.solicitud.value.nombre,
-      email: this.solicitud.value.email,
-      telefono: this.solicitud.value.telefono,
-      asunto: this.solicitud.value.asunto,
-      descripcion: this.solicitud.value.descripcion,
-    })
-
+    
     const {nombre, email, telefono, asunto, descripcion} = this.solicitud.value;
     this.regSer.registrarSolicutud(nombre,email,telefono,asunto,descripcion).subscribe(res=>console.log(res));
     this.toastrSvc.success(`Enviado correctamente`, 'UTVCO TECHNOLOGY');
+
+    this.solicitud.reset();
   }
 
 
