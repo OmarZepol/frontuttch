@@ -1,4 +1,6 @@
-# HTec
+# Proyecto de UTVCO TECHNOLOGY Front.
+
+#Para poder ejecutar correctamente deberas contar previemente con Node, NPM y Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
