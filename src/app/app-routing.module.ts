@@ -6,6 +6,7 @@ import { DesarrolloComponent } from './pages/desarrollo/desarrollo.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MantenimientoComponent } from './pages/mantenimiento/mantenimiento.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 import { VentamodulosComponent } from './pages/ventamodulos/ventamodulos.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'login', component: LoginComponent},
   {path: 'mantenimiento', component: MantenimientoComponent},
+  {path: 'registro', component: RegistroComponent},
   {path: 'venta-modulos', component: VentamodulosComponent},
   { path: '',   redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: LoginComponent },
